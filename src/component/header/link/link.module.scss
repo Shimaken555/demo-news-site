@@ -1,0 +1,45 @@
+.link {
+  margin-top: 30px;
+  display: flex;
+  font-size: 22px;
+  width: 150px;
+  @media screen and (max-width: 767px) {
+    margin-top: 22px;
+    }
+    @media screen and (max-width: 600px) {
+    font-size: 18px;
+    margin-top: 25px;
+    }
+}
+
+.link__icon {
+  margin-top: 1px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  span {
+    line-height: 16px;
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -10px;
+    height: 40px;
+    border-left: 1px solid #ddd;
+  }
+}
+
+.link__lead {
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+.link__blue{
+  color: #1e90ff;
+}
+
+.link__red{
+  color: #ff6666;
+}

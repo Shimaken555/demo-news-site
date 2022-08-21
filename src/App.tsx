@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{FC,useReducer, createContext} from 'react';
+import { BrowserRouter,Switch, Route } from 'react-router-dom'
 import './App.css';
+import HomeScreen from './component/main/homeScreen';
+import BookmarkScreen from './component/main/bookmarkScreen';
+import { BookmarkType } from './types';
+import { bookmarkReducer } from './bookmark/bookmarkReducer';
 
-function App() {
+export const BookmarkContext = createContext({} as BookmarkType)
+
+const App:FC =() => {
+  const [state, dispatch] = useReducer(bookmarkReducer, { bookmarkArticles: [] })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BookmarkContext.Provider value={{ bookmarkState: state, bookmarkDispatch: dispatch }}>
+    <BrowserRouter>
+    <Switch>
+        <Route exact path='/'>
+        <HomeScreen />
+        </Route>
+        <Route exact path='/bookmark'>
+          <BookmarkScreen />
+        </Route>
+    </Switch>
+    </BrowserRouter>
+    </BookmarkContext.Provider>
   );
 }
 

@@ -1,0 +1,82 @@
+.header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  // box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+  @media screen and (max-width: 767px) {
+    height: 65px;
+  }
+  h1 {
+    font-size: 32px;
+    padding-top: 23px;
+    text-align: center;
+    width: 80%;
+    @media screen and (max-width: 767px) {
+      font-size: 28px;
+      text-align: left;
+      margin-left: 30px;
+      width: 50%;
+      padding-top: 18px;
+    }
+    @media screen and (max-width: 600px) {
+      font-size: 20px;
+      margin-left: 20px;
+      width: 47%;
+      padding-top: 23px;
+    }
+  }
+}
+
+.header__nav {
+  visibility: hidden;
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    height: 60px;
+    top: 0;
+    right: 40px;
+    width: 30px;
+    visibility: visible;
+    z-index: 101;
+    cursor: pointer;
+    @media screen and (max-width: 600px) {
+      right: 20px;
+    }
+  }
+}
+
+.header__open {
+  position: relative;
+  margin: auto;
+  margin-right: 0;
+  height: 60px;
+  visibility: hidden;
+  @media screen and (max-width: 767px) {
+    visibility: visible;
+  }
+}
+
+.header__open__bar {
+  position: absolute;
+  display: block;
+  right: 0;
+  height: 2px;
+  width: 30px;
+  background-color: black;
+  &:nth-child(1) {
+    top: 22px;
+  }
+
+  &:nth-child(2) {
+    top: 30px;
+  }
+
+  &:nth-child(3) {
+    top: 38px;
+  }
+}

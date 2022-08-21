@@ -1,0 +1,21 @@
+.category {
+  margin-top: 45px;
+  li {
+    margin-top: 20px;
+    list-style-type: none;
+    cursor: pointer;
+    span {
+      font-size: 22px;
+      &:hover {
+        color: #1e90ff;
+      }
+    }
+  }
+  .displayed {
+    cursor: auto;
+    span {
+      color: #1e90ff;
+      font-weight: bold;
+    }
+  }
+}
