@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import moment from 'moment';
-import styles from './listItem.module.scss';
+
 import { Article } from '../../types';
 import { BookmarkContext } from '../../App';
 import { addBookmark, deleteBookmark } from '../../bookmark/bookmarkAction';
 import { GrFavorite } from 'react-icons/gr';
 import { MdFavorite } from 'react-icons/md';
+import styles from './listItem.module.scss';
 
 type Props = {
   article: Article;
